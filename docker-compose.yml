@@ -22,10 +22,12 @@ services:
         build: nginx
         ports:
             - 80:80
+            - 443:443
         volumes_from:
             - php
         volumes:
-            - ./logs/nginx/:/var/log/nginx
+            - ./logs/nginx:/var/log/nginx
+            - ./ssl:/ssl
     elk:
         image: willdurand/elk
         ports:
