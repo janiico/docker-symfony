@@ -116,6 +116,9 @@ $ docker inspect $(docker ps -f name=nginx -q) | grep IPAddress
 # MySQL commands
 $ docker-compose exec db mysql -uroot -p"root"
 
+#export db
+$ docker-compose exec db /usr/bin/mysqldump -uroot -p"root" mydb > mydb.sql
+
 # F***ing cache/logs folder
 $ sudo chmod -R 777 app/cache app/logs # Symfony2
 $ sudo chmod -R 777 var/cache var/logs var/sessions # Symfony3
